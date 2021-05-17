@@ -9,7 +9,7 @@ namespace GradeBook
         public Book(string name)
         {
             grades = new List<double>();
-            this.name = name;
+            Name = name;
         }
         // define a method
         public void AddGrade(double grade)
@@ -41,13 +41,13 @@ namespace GradeBook
                 result.High = Math.Max(grade, result.High);
                 result.Average += grade;
             }
-            result.Average = result.Average / grades.Count;
+            result.Average /= grades.Count;
             return result;
         }
 
         // define a field - CANNOT use implicit typing (var)
         private List<double> grades;
-        private string name;
+        public string Name;
 
     }
 }
