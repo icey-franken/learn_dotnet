@@ -3,12 +3,13 @@ using System.Collections.Generic;
 
 namespace GradeBook
 {
-    class Book
+    public class Book
     {
         // define a constructor - no return type (void, etc)
-        public Book()
+        public Book(string name)
         {
             grades = new List<double>();
+            this.name = name;
         }
         // define a method
         public void AddGrade(double grade)
@@ -27,20 +28,21 @@ namespace GradeBook
             }
         }
 
-        public void ShowStats()
+        public Statistics GetStatistics()
         {
+            var result = new Statistics();
+            result.Low = double.MaxValue;
+            result.High = double.MinValue;
+            result.Average = 0.0;
 
-            var total = 0.0;
-            var highGrade = double.MinValue;
-            var lowGrade = double.MaxValue;
-            foreach (double number in grades)
+            foreach (double grade in grades)
             {
-                lowGrade = Math.Min(number, lowGrade);
-                highGrade = Math.Max(number, highGrade);
-                total += number;
+                result.Low = Math.Min(grade, result.Low);
+                result.High = Math.Max(grade, result.High);
+                result.Average += grade;
             }
-            var average = total / grades.Count;
-            Console.WriteLine($"The average grade is {average:N2}.\n The highest grade is {highGrade:N1}.\n The lowest grade is {lowGrade:N1}.");
+            result.Average = result.Average / grades.Count;
+            return result;
         }
 
         // define a field - CANNOT use implicit typing (var)
