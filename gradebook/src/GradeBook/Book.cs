@@ -14,6 +14,7 @@ namespace GradeBook
         // define a method
         public void AddGrade(double grade)
         {
+            System.Console.WriteLine("asdf");
             // validate grade
             if (grade <= 100 && grade >= 0)
             {
@@ -22,10 +23,11 @@ namespace GradeBook
             }
             else
             {
+                System.Console.WriteLine("asd; f");
                 throw new ArgumentException($"Invalid {nameof(grade)}");
             }
-            
         }
+
 
         public void AddLetterGrade(char letter)
         {
@@ -118,8 +120,49 @@ namespace GradeBook
         }
 
         // define a field - CANNOT use implicit typing (var)
-        private List<double> grades;
-        public string Name;
+        public List<double> grades;
 
+        public List<double> Grades
+        {
+            get
+            {
+                return grades;
+            }
+            set
+            {
+                Grades = grades;
+            }
+        }
+
+        // the FIELD name
+        public string name;
+
+        // the PROPERTY Name
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                try
+                {
+
+                    if (!string.IsNullOrEmpty(value))
+                    {
+                        name = value;
+                    }
+                    else
+                    {
+                        throw new FormatException("GradeBook must have a name.");
+                    }
+                }
+                catch (FormatException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+        }
     }
 }

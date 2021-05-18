@@ -1,5 +1,6 @@
 using System;
 using Xunit;
+using System.Collections.Generic;
 
 namespace GradeBook.Tests
 {
@@ -25,18 +26,29 @@ namespace GradeBook.Tests
         }
 
         [Fact]
-        public void GradeEntriesAreValidated()
+        public void ValidGradeEntriesAreAdded()
         {
             // arrange
             var book = new Book("");
-            
+            var dummyList = new List<double>();
+            dummyList.Add(50);
             // act
-            book.AddGrade(-1);
-            book.AddGrade(1000);
             book.AddGrade(50);
+            // assert
+            Assert.Equal(book.grades, dummyList);
+        }
+
+        [Fact]
+        public void InvalidGradeEntriesThrowArgumentException()
+        {
+            // arrange
+            var book = new Book("");
+
+            // act
 
             // assert
-            // ???
+            Assert.Throws<ArgumentException>(() => book.AddGrade(1000));
+            Assert.Throws<ArgumentException>(() => book.AddGrade(-1));
         }
     }
 }

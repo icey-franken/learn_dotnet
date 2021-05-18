@@ -3,8 +3,31 @@ using Xunit;
 
 namespace GradeBook.Tests
 {
+
+    // delegate e.g. to log messages
+    // the delegate below describes any method that returns a string and takes a string
+    public delegate string WriteLogDelegate(string logMessage);
+
     public class TypeTests
     {
+        [Fact]
+        public void WriteLogDelegateCanPointToMethod()
+        {
+            WriteLogDelegate log;
+
+            log = new WriteLogDelegate(ReturnMessage);
+            // equivalent to log = ReturnMessage //compiler is smart enough to figure this out
+
+            var result = log("Hello");
+            Assert.Equal("Hello", result);
+        }
+
+// dummy function that returns a string and takes a string
+        string ReturnMessage(string message)
+        {
+            return message;
+        }
+
         [Fact]
         public void Test1()
         {
