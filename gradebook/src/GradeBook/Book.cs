@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 namespace GradeBook
 {
+    public delegate void GradeAddedDelegate(object sender, EventArgs args);
+
     public class Book
     {
         // define a constructor - no return type (void, etc)
@@ -14,19 +16,25 @@ namespace GradeBook
         // define a method
         public void AddGrade(double grade)
         {
-            System.Console.WriteLine("asdf");
             // validate grade
             if (grade <= 100 && grade >= 0)
             {
                 // store in an object instantiated by this class  as a piece of state
                 grades.Add(grade);
+                if(GradeAdded != null) // "if someone is listening..."
+                {
+                    // we use 'this' because 'this' is the sender (object)
+                    GradeAdded(this, new EventArgs());
+                }
             }
             else
             {
-                System.Console.WriteLine("asd; f");
                 throw new ArgumentException($"Invalid {nameof(grade)}");
             }
         }
+
+        // book.GradeAdded - delegate invoked whenever grade added
+        public event GradeAddedDelegate GradeAdded;
 
 
         public void AddLetterGrade(char letter)
