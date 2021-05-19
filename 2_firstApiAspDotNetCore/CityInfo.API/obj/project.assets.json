@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\isaac.finken\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Documents\\learn_dotnet\\2_firstApiAspDotNetCore\\Project\\Project.csproj",
-      "projectName": "Project",
-      "projectPath": "C:\\Users\\isaac.finken\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Documents\\learn_dotnet\\2_firstApiAspDotNetCore\\Project\\Project.csproj",
+      "projectUniqueName": "C:\\Users\\isaac.finken\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Documents\\learn_dotnet\\2_firstApiAspDotNetCore\\CityInfo.API\\CityInfo.API.csproj",
+      "projectName": "CityInfo.API",
+      "projectPath": "C:\\Users\\isaac.finken\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Documents\\learn_dotnet\\2_firstApiAspDotNetCore\\CityInfo.API\\CityInfo.API.csproj",
       "packagesPath": "C:\\Users\\isaac.finken\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\isaac.finken\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Documents\\learn_dotnet\\2_firstApiAspDotNetCore\\Project\\obj\\",
+      "outputPath": "C:\\Users\\isaac.finken\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Documents\\learn_dotnet\\2_firstApiAspDotNetCore\\CityInfo.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\isaac.finken\\AppData\\Roaming\\NuGet\\NuGet.Config"
