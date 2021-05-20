@@ -45,10 +45,6 @@ namespace GradeBook
                 {
                     Console.WriteLine(ex.Message);
                 }
-                finally
-                {
-                    Console.WriteLine("Thanks, teach!");
-                }
             }
         }
 

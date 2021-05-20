@@ -55,10 +55,13 @@ namespace GradeBook
             // using keywork guarantees that writer.Dispose() called at end of curlies
             using (var writer = File.AppendText($"{Name}.txt"))
             {
-                writer.WriteLine(grade);
-                if (GradeAdded != null)
+                if (grade >= 0 && grade <= 100)
                 {
-                    GradeAdded(this, new EventArgs());
+                    writer.WriteLine(grade);
+                    if (GradeAdded != null)
+                    {
+                        GradeAdded(this, new EventArgs());
+                    }
                 }
             }
         }
