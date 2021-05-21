@@ -18,6 +18,7 @@ namespace CityInfo.API
         //this is where we 'add framework services to the container'
         public void ConfigureServices(IServiceCollection services)
         {
+            //https://stackoverflow.com/questions/57684093/using-usemvc-to-configure-mvc-is-not-supported-while-using-endpoint-routing
             services.AddMvc(MvcOptions => MvcOptions.EnableEndpointRouting = false);
             //MvcOptions.EnableEndpointRouting = false;
         }
