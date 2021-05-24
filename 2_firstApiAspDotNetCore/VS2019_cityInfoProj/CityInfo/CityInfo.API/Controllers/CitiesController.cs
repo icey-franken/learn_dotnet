@@ -19,17 +19,28 @@ namespace CityInfo.API.Controllers
         //adding an HttpGet attribute to be executed when request sent to "api/cities"
         [HttpGet]
         //class JsonResult returns jsonified version of whatever passed into constructor of new JsonResult object
-        public JsonResult GetCities()
+        public IActionResult GetCities()
         {
-            return new JsonResult(CitiesDataStore.Current.Cities);
+            var citiesToReturn = CitiesDataStore.Current.Cities;
+            return Ok(citiesToReturn);
+            //return new JsonResult(CitiesDataStore.Current.Cities);
         }
 
         //remember: we set the route template to api/cities, so we only look for id here to find api/cities/id
         //  curly braces are used to indicate a parameter
         [HttpGet("{id}")]
-        public JsonResult GetCity(int id)
+        public IActionResult GetCity(int id)
         {
-            return new JsonResult(CitiesDataStore.Current.Cities.FirstOrDefault(city => city.Id == id));
+            var cityToReturn = CitiesDataStore.Current.Cities.FirstOrDefault(city => city.Id == id);
+
+            if (cityToReturn == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(cityToReturn);
+
+            //return new JsonResult(CitiesDataStore.Current.Cities.FirstOrDefault(city => city.Id == id));
         }
     }
 }

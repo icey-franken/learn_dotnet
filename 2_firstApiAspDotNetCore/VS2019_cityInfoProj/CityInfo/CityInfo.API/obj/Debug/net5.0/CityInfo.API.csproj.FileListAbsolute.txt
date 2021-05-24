@@ -21,3 +21,8 @@ C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn
 C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API\obj\Debug\net5.0\ref\CityInfo.API.dll
 C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API\obj\Debug\net5.0\CityInfo.API.pdb
 C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API\obj\Debug\net5.0\CityInfo.API.genruntimeconfig.cache
+C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API\obj\Debug\net5.0\CityInfo.API.csproj.CopyComplete
+C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll

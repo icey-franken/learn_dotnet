@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "q8qo7xFFDLtYuHfqdbrOh5r13fntxz9MxeAXeWX4JMdCz3yBoM7QzPS/o4veSwA9dCSszukQEzcyvAmE3ZKj9g==",
+  "dgSpecHash": "YrCUKn79vSj4DEwclywrotZhbcFxW2ETDrdYfFZ4JkgXTCzxO2GB/+tWH6RwPJLvhRr/GHFFyAAeycFbwHeJxw==",
   "success": true,
   "projectFilePath": "C:\\Users\\isaac.finken\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Documents\\learn_dotnet\\2_firstApiAspDotNetCore\\VS2019_cityInfoProj\\CityInfo\\CityInfo.API\\CityInfo.API.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\isaac.finken\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.6\\microsoft.aspnetcore.jsonpatch.5.0.6.nupkg.sha512",
+    "C:\\Users\\isaac.finken\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\5.0.6\\microsoft.aspnetcore.mvc.newtonsoftjson.5.0.6.nupkg.sha512",
+    "C:\\Users\\isaac.finken\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\isaac.finken\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\isaac.finken\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512"
+  ],
   "logs": []
 }

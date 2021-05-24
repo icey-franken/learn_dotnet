@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
@@ -19,7 +20,17 @@ namespace CityInfo.API
         public void ConfigureServices(IServiceCollection services)
         {
             //https://stackoverflow.com/questions/57684093/using-usemvc-to-configure-mvc-is-not-supported-while-using-endpoint-routing
-            services.AddMvc(MvcOptions => MvcOptions.EnableEndpointRouting = false);
+            services.AddMvc(MvcOptions => MvcOptions.EnableEndpointRouting = false)
+                .AddMvcOptions(o =>
+                {
+                    o.OutputFormatters.Add(new XmlDataContractSerializerOutputFormatter());
+                });
+
+            //had to add these along with NewtonsoftJson package from NuGet.
+            //  see here for info: https://github.com/dotnet/aspnetcore/issues/13938
+            services
+                .AddControllersWithViews()
+                .AddNewtonsoftJson();
             //MvcOptions.EnableEndpointRouting = false;
         }
 
@@ -36,12 +47,14 @@ namespace CityInfo.API
                 app.UseExceptionHandler();
             }
 
+            app.UseStatusCodePages();
+
             app.UseMvc();
 
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello, Borld!");
-            });
+            //app.Run(async (context) =>
+            //{
+            //    await context.Response.WriteAsync("Hello, Borld!");
+            //});
 
             //routing matches request URI to controller METHOD
             //two types of routing: convention based and attribute based - we will use attribute based.
