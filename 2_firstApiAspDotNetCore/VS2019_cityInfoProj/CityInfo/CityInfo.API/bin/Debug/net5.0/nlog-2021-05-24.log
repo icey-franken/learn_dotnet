@@ -1,0 +1,67 @@
+2021-05-24 22:08:02.4086|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-05-24 22:08:02.4622|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-05-24 22:08:02.4752|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API
+2021-05-24 22:08:08.5999|FATAL|CityInfo.API.Controllers.PointsOfInterestController|Exception while getting points of interest for city with id 10.
+2021-05-24 22:12:27.5811|INFO|CityInfo.API.Program|Initializing application...
+2021-05-24 22:12:28.6536|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-05-24 22:12:28.6638|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-05-24 22:12:28.6638|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API
+2021-05-24 22:12:33.8005|FATAL|CityInfo.API.Controllers.PointsOfInterestController|Exception while getting points of interest for city with id 10.
+2021-05-24 22:12:34.7486|FATAL|CityInfo.API.Controllers.PointsOfInterestController|Exception while getting points of interest for city with id 10.
+2021-05-24 22:23:03.1270|INFO|CityInfo.API.Program|Initializing application...
+2021-05-24 22:23:04.2166|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-05-24 22:23:04.2248|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-05-24 22:23:04.2248|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API
+2021-05-24 22:23:30.3275|INFO|CityInfo.API.Program|Initializing application...
+2021-05-24 22:23:31.3588|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-05-24 22:23:31.3662|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-05-24 22:23:31.3662|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API
+2021-05-24 22:31:47.3870|INFO|CityInfo.API.Program|Initializing application...
+2021-05-24 22:31:48.5248|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-05-24 22:31:48.5337|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-05-24 22:31:48.5337|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API
+2021-05-24 22:31:57.5895|INFO|CityInfo.API.Program|Initializing application...
+2021-05-24 22:31:59.1073|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-05-24 22:31:59.1209|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-05-24 22:31:59.1209|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API
+2021-05-24 22:41:39.5156|INFO|CityInfo.API.Program|Initializing application...
+2021-05-24 22:41:40.5945|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-05-24 22:41:40.5945|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-05-24 22:41:40.5945|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API
+2021-05-24 22:42:10.5466|INFO|CityInfo.API.Program|Initializing application...
+2021-05-24 22:42:11.6736|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-05-24 22:42:11.6736|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-05-24 22:42:11.6736|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API
+2021-05-24 22:44:29.1481|INFO|CityInfo.API.Program|Initializing application...
+2021-05-24 22:44:30.2418|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-05-24 22:44:30.2418|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-05-24 22:44:30.2520|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API
+2021-05-24 22:45:21.7527|INFO|CityInfo.API.Program|Initializing application...
+2021-05-24 22:45:22.8370|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\isaac.finken\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-05-24 22:45:23.3930|FATAL|Microsoft.AspNetCore.Hosting.Diagnostics|Application startup exception
+2021-05-24 22:45:23.4433|ERROR|CityInfo.API.Program|Application stopped because of exception.
+2021-05-24 22:45:51.0647|INFO|CityInfo.API.Program|Initializing application...
+2021-05-24 22:45:51.9179|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\isaac.finken\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-05-24 22:45:52.1440|FATAL|Microsoft.AspNetCore.Hosting.Diagnostics|Application startup exception
+2021-05-24 22:45:52.1783|ERROR|CityInfo.API.Program|Application stopped because of exception.
+2021-05-24 22:46:32.2148|INFO|CityInfo.API.Program|Initializing application...
+2021-05-24 22:46:32.9526|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\isaac.finken\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-05-24 22:46:33.2088|FATAL|Microsoft.AspNetCore.Hosting.Diagnostics|Application startup exception
+2021-05-24 22:46:33.2414|ERROR|CityInfo.API.Program|Application stopped because of exception.
+2021-05-24 22:46:51.6108|INFO|CityInfo.API.Program|Initializing application...
+2021-05-24 22:46:52.5080|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-05-24 22:46:52.5158|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-05-24 22:46:52.5158|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API
+2021-05-24 22:47:23.2869|INFO|CityInfo.API.Program|Initializing application...
+2021-05-24 22:47:24.2445|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-05-24 22:47:24.2511|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-05-24 22:47:24.2511|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API
+2021-05-24 22:47:50.9411|INFO|CityInfo.API.Program|Initializing application...
+2021-05-24 22:47:51.6667|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\isaac.finken\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-05-24 22:47:51.9014|FATAL|Microsoft.AspNetCore.Hosting.Diagnostics|Application startup exception
+2021-05-24 22:47:51.9462|ERROR|CityInfo.API.Program|Application stopped because of exception.
+2021-05-24 22:48:58.0290|INFO|CityInfo.API.Program|Initializing application...
+2021-05-24 22:48:58.7725|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\isaac.finken\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-05-24 22:48:58.9905|FATAL|Microsoft.AspNetCore.Hosting.Diagnostics|Application startup exception
+2021-05-24 22:49:28.2493|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\isaac.finken\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-05-24 22:49:28.4955|FATAL|Microsoft.AspNetCore.Hosting.Diagnostics|Application startup exception

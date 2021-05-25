@@ -26,3 +26,8 @@ C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn
 C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API\obj\Debug\net5.0\CityInfo.API.csproj.CopyComplete
 C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API\bin\Debug\net5.0\nlog.config
+C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API\bin\Debug\net5.0\NLog.dll
+C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API\bin\Debug\net5.0\NLog.Extensions.Logging.dll
+C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API\bin\Debug\net5.0\NLog.Web.AspNetCore.dll
+C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API\bin\Debug\net5.0\appsettings.Production.json

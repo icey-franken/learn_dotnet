@@ -1,8 +1,9 @@
 ﻿using CityInfo.API.Models;
+using CityInfo.API.Services;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
-
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,17 @@ namespace CityInfo.API.Controllers
     [Route("api/cities/{cityId}/pointsofinterest")]
     public class PointsOfInterestController : ControllerBase
     {
+        // constructor injection
+        private readonly ILogger<PointsOfInterestController> _logger;
+        private readonly IMailService _mailService;
+        public PointsOfInterestController(ILogger<PointsOfInterestController> logger,
+            IMailService mailService)
+        {
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _mailService = mailService ?? throw new ArgumentNullException(nameof(mailService));
+        }
+        //-------------------------------
+
         [HttpGet]
         public IActionResult GetPointsOfInterest(int cityId)
         {
@@ -31,24 +43,34 @@ namespace CityInfo.API.Controllers
         [HttpGet("{id}", Name = "GetPointOfInterest")]
         public IActionResult GetPointOfInterest(int cityId, int id)
         {
-            var city = CitiesDataStore.Current.Cities
-                .FirstOrDefault(city => city.Id == cityId);
-
-            if (city == null)
+            try
             {
-                return NotFound();
+                //throw new Exception("SAMPLE");
+                var city = CitiesDataStore.Current.Cities
+                    .FirstOrDefault(city => city.Id == cityId);
+
+                if (city == null)
+                {
+                    _logger.LogInformation($"City with id {cityId} was not found.");
+                    return NotFound();
+                }
+
+                // if city does exist, find the point of interest
+                var pointOfInterest = city.PointsOfInterest
+                    .FirstOrDefault(pointOfInterest => pointOfInterest.Id == id);
+
+                if (pointOfInterest == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(pointOfInterest);
             }
-
-            // if city does exist, find the point of interest
-            var pointOfInterest = city.PointsOfInterest
-                .FirstOrDefault(pointOfInterest => pointOfInterest.Id == id);
-
-            if (pointOfInterest == null)
+            catch(Exception ex)
             {
-                return NotFound();
+                _logger.LogCritical($"Exception while getting points of interest for city with id {cityId}.", ex);
+                return StatusCode(500, "A problem happened while handling your request, yo.");
             }
-
-            return Ok(pointOfInterest);
 
         }
 
@@ -236,6 +258,9 @@ namespace CityInfo.API.Controllers
             }
 
             city.PointsOfInterest.Remove(pointOfInterestFromStore);
+
+            _mailService.Send("Point of interest deleted.",
+                $"Point of interest {pointOfInterestFromStore.Name} with id {pointOfInterestFromStore.Id} was deleted.");
 
             return NoContent();
         }
