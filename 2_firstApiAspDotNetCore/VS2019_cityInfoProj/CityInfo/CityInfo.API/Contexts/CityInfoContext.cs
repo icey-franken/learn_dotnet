@@ -11,7 +11,7 @@ namespace CityInfo.API.Context
     {
         //"A DbSet can be used to query and save instances of its entity type,
         //so linked queries against the dbset will be translated into queries against the database"
-        
+
         //we need to register context with application so it's available for dependency injection.
         public DbSet<City> Cities { get; set; }
         public DbSet<PointOfInterest> PointsOfInterest { get; set; }
@@ -23,7 +23,7 @@ namespace CityInfo.API.Context
             //this ensures that the database is created when the city info context constructor initializes (instance creation)
             //remember: just REGISTERING city info context (on build/run of solution) in our startup file
             //  does NOT call the constructor. I think that comes later - dependency injection?
-            Database.EnsureCreated();
+            //Database.EnsureCreated();
         }
 
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -31,5 +31,20 @@ namespace CityInfo.API.Context
         //    optionsBuilder.UseSqlServer("connectionString")
         //    base.OnConfiguring(optionsBuilder);
         //}
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            //use OnModelCreating to access modelBUilder:
+            //  can manually construct model if things are complicated or if you want to be explicit
+            //  can be used to seed the database
+            modelBuilder.Entity<City>()
+                .HasData(new City()
+                {
+                    Id = 1,
+                    Name = "A Place",
+                    Description = "A Description"
+                }
+                );
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

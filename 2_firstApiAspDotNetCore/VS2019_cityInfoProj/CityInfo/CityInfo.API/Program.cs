@@ -1,5 +1,8 @@
+using CityInfo.API.Context;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NLog.Web;
@@ -17,20 +20,27 @@ namespace CityInfo.API
             var logger = NLogBuilder
                 .ConfigureNLog("nlog.config")
                 .GetCurrentClassLogger();
-            try
+            
+            logger.Info("Initializing application...");
+            var host = CreateHostBuilder(args).Build();
+
+            using (var scope = host.Services.CreateScope())
             {
-                logger.Info("Initializing application...");
-                CreateHostBuilder(args).Build().Run();
+                try
+                {
+                    var context = scope.ServiceProvider.GetService<CityInfoContext>();
+                    //FOR DEMO PURPOSES ONLY - DO NOT DO IRL
+                    //delete the db and migrate on startup so we start with a clean slate
+                    context.Database.EnsureDeleted();
+                    context.Database.Migrate();
+                }
+                catch (Exception ex)
+                {
+                    logger.Error(ex, "An error occurred while migrating the database.");
+                }
             }
-            catch (Exception ex)
-            {
-                logger.Error(ex, "Application stopped because of exception.");
-                throw;
-            }
-            finally
-            {
-                NLog.LogManager.Shutdown();
-            }
+            //NOW we run the web app, after.... migrating db?
+            host.Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

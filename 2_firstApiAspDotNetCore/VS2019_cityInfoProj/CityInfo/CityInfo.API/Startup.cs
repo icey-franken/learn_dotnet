@@ -13,11 +13,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer;
+using Microsoft.Extensions.Configuration;
 
 namespace CityInfo.API
 {
     public class Startup
     {
+        //use dependency injection of the configuration object to get configuration variables (e.g. connection string)
+        private readonly IConfiguration _configuration;
+        public Startup(IConfiguration configuration)
+        {
+            _configuration = configuration ??
+                throw new ArgumentNullException(nameof(configuration));
+        }
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         //this is where we 'add framework services to the container'
@@ -41,7 +49,8 @@ namespace CityInfo.API
 #else
             services.AddTransient<IMailService, CloudMailService>();
 #endif
-            var connectionString = @"Server=(localdb)\ProjectsV13;Database=CityInfoDB;Trusted_Connection=True;";
+            var test = _configuration["MailSettings:MailToAddress"];
+            var connectionString = _configuration["connectionStrings:cityInfoDBConnectionString"];
             //"registers city info context with a scoped lifetime."
             services.AddDbContext<CityInfoContext>(options =>
             {
