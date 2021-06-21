@@ -49,13 +49,14 @@ namespace CityInfo.API
 #else
             services.AddTransient<IMailService, CloudMailService>();
 #endif
-            var test = _configuration["MailSettings:MailToAddress"];
             var connectionString = _configuration["connectionStrings:cityInfoDBConnectionString"];
             //"registers city info context with a scoped lifetime."
             services.AddDbContext<CityInfoContext>(options =>
             {
                 options.UseSqlServer(connectionString);
             });
+            // "add scoped lifetime for a repository so it's created once per request"
+            services.AddScoped<ICityInfoRepository, CityInfoRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
