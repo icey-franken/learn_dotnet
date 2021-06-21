@@ -1,3 +1,4 @@
+using CityInfo.API.Context;
 using CityInfo.API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -10,6 +11,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.SqlServer;
 
 namespace CityInfo.API
 {
@@ -38,6 +41,12 @@ namespace CityInfo.API
 #else
             services.AddTransient<IMailService, CloudMailService>();
 #endif
+            var connectionString = @"Server=(localdb)\ProjectsV13;Database=CityInfoDB;Trusted_Connection=True;";
+            //"registers city info context with a scoped lifetime."
+            services.AddDbContext<CityInfoContext>(options =>
+            {
+                options.UseSqlServer(connectionString);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,7 +59,7 @@ namespace CityInfo.API
             }
             else
             {
-                app.UseExceptionHandler();
+                app.UseExceptionHandler("/Error");
             }
 
             app.UseStatusCodePages();
