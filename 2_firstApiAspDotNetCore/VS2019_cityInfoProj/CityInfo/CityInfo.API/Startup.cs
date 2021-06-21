@@ -57,6 +57,8 @@ namespace CityInfo.API
             });
             // "add scoped lifetime for a repository so it's created once per request"
             services.AddScoped<ICityInfoRepository, CityInfoRepository>();
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

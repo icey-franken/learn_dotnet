@@ -62,3 +62,5 @@ C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn
 C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API\obj\Debug\net5.0\CityInfo.API.csproj.AssemblyReference.cache
 C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API\bin\Debug\net5.0\Humanizer.dll
 C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\isaac.finken\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\Documents\learn_dotnet\2_firstApiAspDotNetCore\VS2019_cityInfoProj\CityInfo\CityInfo.API\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

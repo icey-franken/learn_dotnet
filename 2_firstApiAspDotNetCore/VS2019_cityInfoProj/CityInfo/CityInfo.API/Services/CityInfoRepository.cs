@@ -58,6 +58,36 @@ namespace CityInfo.API.Services
                 .OrderBy(p => p.Name)
                 .ToList();
         }
-        //now we register this in the configure services method - add scoped 
+        //now we register this in the configure services method in startup.cs - add scoped 
+
+
+        public bool CityExists(int cityId)
+        {
+            return _context.Cities
+                .Any(c => c.Id == cityId);
+        }
+
+        public void AddPointOfInterestForCity(int cityId, PointOfInterest pointOfInterest)
+        {
+            var city = GetCity(cityId, false);
+            //this only add to object context - in memory. Has NOT added to db - to do that we call save changes on context 
+            city.PointsOfInterest.Add(pointOfInterest);
+        }
+
+        public void UpdatePointOfInterestForCity(int cityId, PointOfInterest pointOfInterest)
+        {
+            //for our implementation this method happens to be empty, because EF core takes care of it for us.
+        }
+
+        public void DeletePointOfInterest(PointOfInterest pointOfInterest)
+        {
+            _context.PointsOfInterest.Remove(pointOfInterest);
+        }
+
+        public bool Save()
+        {
+            //returns number of entities changed. 
+            return (_context.SaveChanges() >= 0);
+        }
     }
 }

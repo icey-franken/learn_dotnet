@@ -44,6 +44,22 @@ namespace CityInfo.API.Context
                     Description = "A Description"
                 }
                 );
+            modelBuilder.Entity<PointOfInterest>()
+                .HasData(new PointOfInterest()
+                {
+                    Id = 1,
+                    CityId = 1,
+                    Name = "POI 1",
+                    Description = "POI 1 des"
+                });
+            modelBuilder.Entity<PointOfInterest>()
+                .HasData(new PointOfInterest()
+                {
+                    Id = 2,
+                    CityId = 1,
+                    Name = "POI 2",
+                    Description = "POI 2 des"
+                });
             base.OnModelCreating(modelBuilder);
         }
     }

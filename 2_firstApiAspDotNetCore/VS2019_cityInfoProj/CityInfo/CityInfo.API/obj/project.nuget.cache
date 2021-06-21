@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "s0B0KBK7/KEXSq/mSE/MhcNC1CfWGv4Aq96Ded9TVKuaXqpfaIoh+ATwaRQha09yfZKSyjxMOutFE8lgtjIatg==",
+  "dgSpecHash": "Fzzs2DPcy5SEKuHea9Mn8cR6+WB6Yeib4O/NKBKevwrzsZrS0l7GFm/91OfDuhK6CJhXMrXtfr11uvc4lTM6zg==",
   "success": true,
   "projectFilePath": "C:\\Users\\isaac.finken\\OneDrive - InTimeTec Visionsoft Pvt. Ltd.,\\Documents\\learn_dotnet\\2_firstApiAspDotNetCore\\VS2019_cityInfoProj\\CityInfo\\CityInfo.API\\CityInfo.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\isaac.finken\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\isaac.finken\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "C:\\Users\\isaac.finken\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\isaac.finken\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.6\\microsoft.aspnetcore.jsonpatch.5.0.6.nupkg.sha512",
     "C:\\Users\\isaac.finken\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\5.0.6\\microsoft.aspnetcore.mvc.newtonsoftjson.5.0.6.nupkg.sha512",
@@ -69,7 +71,7 @@
     "C:\\Users\\isaac.finken\\.nuget\\packages\\system.private.datacontractserialization\\4.3.0\\system.private.datacontractserialization.4.3.0.nupkg.sha512",
     "C:\\Users\\isaac.finken\\.nuget\\packages\\system.private.uri\\4.3.2\\system.private.uri.4.3.2.nupkg.sha512",
     "C:\\Users\\isaac.finken\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
-    "C:\\Users\\isaac.finken\\.nuget\\packages\\system.reflection.emit\\4.3.0\\system.reflection.emit.4.3.0.nupkg.sha512",
+    "C:\\Users\\isaac.finken\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
     "C:\\Users\\isaac.finken\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.3.0\\system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512",
     "C:\\Users\\isaac.finken\\.nuget\\packages\\system.reflection.emit.lightweight\\4.3.0\\system.reflection.emit.lightweight.4.3.0.nupkg.sha512",
     "C:\\Users\\isaac.finken\\.nuget\\packages\\system.reflection.extensions\\4.3.0\\system.reflection.extensions.4.3.0.nupkg.sha512",
