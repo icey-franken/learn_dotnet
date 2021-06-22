@@ -72,7 +72,7 @@ namespace OdeToFood.Web.Controllers
                 db.Update(restaurant);
                 return RedirectToAction("Details", new { id = restaurant.Id });
             }
-            return View(restaurant);//if they fuck up, we send them back here.
+            return View(restaurant);//if they fuck up, we send them back here. 
         }
     }
 }
