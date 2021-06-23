@@ -10,7 +10,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 
 namespace OdeToFood.Web
-{
+{ 
     public class ContainerConfig
     {
         internal static void RegisterContainer(HttpConfiguration httpConfiguration)
@@ -19,9 +19,11 @@ namespace OdeToFood.Web
 
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
             builder.RegisterApiControllers(typeof(MvcApplication).Assembly);
-            builder.RegisterType<InMemoryRestaurantData>()
+            builder.RegisterType<SqlRestaurantData>()
                    .As<IRestaurantData>()
-                   .SingleInstance();
+                   .InstancePerRequest();
+            builder.RegisterType<OdeToFoodDbContext>()
+                .InstancePerRequest();
 
             var container = builder.Build();
 

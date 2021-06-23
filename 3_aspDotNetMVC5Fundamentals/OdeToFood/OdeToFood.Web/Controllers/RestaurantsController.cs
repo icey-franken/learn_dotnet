@@ -74,5 +74,26 @@ namespace OdeToFood.Web.Controllers
             }
             return View(restaurant);//if they fuck up, we send them back here. 
         }
+
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            var model = db.Get(id);
+            if(model == null)
+            {
+                return View("NotFound");
+            }
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        //form collection is only here to overload the delete method and change the function signature.
+        //that way, EF core knows that this method and the above delete method are unique.
+        public ActionResult Delete(int id, FormCollection form)
+        {
+            db.Delete(id);
+            return RedirectToAction("Index");
+        }
     }
 }
