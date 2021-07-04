@@ -29,3 +29,4 @@ app.addViewModel({
     bindingMemberName: "home",
     factory: HomeViewModel
 });
+
