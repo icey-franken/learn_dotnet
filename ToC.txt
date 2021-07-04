@@ -1,3 +1,13 @@
-1: C# Fundamentals
-2: First API - ASP.NET Core
-3: ASP.NET MVC 5 Fundamentals
+[X]1: C# Fundamentals - Scott Allen - https://app.pluralsight.com/library/courses/csharp-fundamentals-dev/table-of-contents
+[X]2: Building Your First API with ASP.NET Core - Kevin Dockx - https://app.pluralsight.com/library/courses/asp-dotnet-core-api-building-first/table-of-contents
+[ONE MODULE LEFT]3: ASP.NET MVC 5 Fundamentals - Scott Allen - https://app.pluralsight.com/library/courses/asp-net-mvc5-web-apps/table-of-contents
+[ ]4: What's New In ASP.NET Core 5.0 - Alex Wolf - https://app.pluralsight.com/library/courses/whats-new-asp-dot-net-five/table-of-contents
+
+[ ]EF Core Learning Path - https://app.pluralsight.com/paths/skill/entity-framework-core
+[ ]5: Entity Framework Core: Getting Started - Julie Lerman - https://app.pluralsight.com/library/courses/entity-framework-core-get-started
+[ ]6: Entity Framework Core 2: Mappings - Julie Lerman - https://app.pluralsight.com/library/courses/e-f-core-2-beyond-the-basics-mappings
+[ ]7: Entity Framework Core 2.1: What's New Playbook - Julie Lerman - https://app.pluralsight.com/library/courses/playbook-ef-core-2-1-whats-new
+[ ]8: Testing with EF Core - Kevin Dockx - https://app.pluralsight.com/library/courses/ef-core-testing
+[ ]9: Entity Framework Core 2.1 Migrations: Fundamentals - Michael Perry - https://app.pluralsight.com/library/courses/entity-framework-core-2-1-migrations-fundamentals
+
+[ ]10:
