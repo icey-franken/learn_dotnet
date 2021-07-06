@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "\\OdeToFood",
+    "\\OdeToFood\\OdeToFood.Web",
+    "\\OdeToFood\\OdeToFood.Web\\bin"
   ],
-  "SelectedNode": "\\OdeToFood.sln",
   "PreviewInSolutionExplorer": false
 }
