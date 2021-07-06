@@ -14,6 +14,9 @@ namespace WiredBrainCoffee.Client.Pages
     public partial class Order
     {
         [Inject]
+        public IJSRuntime JSRuntime { get; set; }
+
+        [Inject]
         public IMenuService MenuService { get; set; }
 
         [Inject]
@@ -78,7 +81,13 @@ namespace WiredBrainCoffee.Client.Pages
 
         public async Task PlaceOrder()
         {
-            NavManager.NavigateTo("order-confirmation");
+            var promoModule = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./js/promocode.js");
+            IsValidPromoCode = await promoModule.InvokeAsync<bool>("VerifyPromoCode", PromoCode);
+
+            if (IsValidPromoCode)
+            {
+                NavManager.NavigateTo("order-confirmation"); 
+            }
         }
 
         protected async override Task OnInitializedAsync()
