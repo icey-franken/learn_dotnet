@@ -12,13 +12,13 @@ namespace SamuraiApp.UI
 
         private static void Main(string[] args)
         {
-            AddSamurais("Julie2", "Sampson2");
+            AddSamuraisByName("Shimada", "Okamoto", "Kikuchio", "Hayashida");
             GetSamurais();
             Console.WriteLine("Press any key...");
             Console.ReadKey();
         }
 
-        private static void AddSamurais(params string[] names)
+        private static void AddSamuraisByName(params string[] names)
         {
             foreach(string name in names)
             {
@@ -30,7 +30,7 @@ namespace SamuraiApp.UI
         private static void GetSamurais()
         {
             var samurais = _context.Samurais
-                .TagWith("ConsoleApp.Program.GetSamurais mehtod")
+                .TagWith("ConsoleApp.Program.GetSamurais method")
                 .ToList();
             Console.WriteLine($"Samurai count is {samurais.Count}");
             foreach(var samurai in samurais)
