@@ -16,12 +16,12 @@ namespace SamuraiApp.UI
         {
             Console.WriteLine("Press any key...");
             Console.ReadKey();
-            QueryAndUpdateBattles_Disconnected();
+            ProjectSamuraisWithQuotes();
         }
 
         private static void AddSamuraisByName(params string[] names)
         {
-            foreach(string name in names)
+            foreach (string name in names)
             {
                 _context.Samurais.Add(new Samurai { Name = name });
             }
@@ -29,7 +29,7 @@ namespace SamuraiApp.UI
         }
         private static void AddBattlesByName(params string[] names)
         {
-            foreach(string name in names)
+            foreach (string name in names)
             {
                 _context.Battles.AddRange(new Battle { Name = name });
             }
@@ -41,7 +41,7 @@ namespace SamuraiApp.UI
                 .TagWith("ConsoleApp.Program.GetSamurais method")
                 .ToList();
             Console.WriteLine($"Samurai count is {samurais.Count}");
-            foreach(var samurai in samurais)
+            foreach (var samurai in samurais)
             {
                 Console.WriteLine(samurai.Name);
             }
@@ -81,7 +81,7 @@ namespace SamuraiApp.UI
         }
         private static void RetrieveAndDeleteASamurai()
         {
-            var samurai = _context.Samurais.FirstOrDefault(s=>s.Id == 19);
+            var samurai = _context.Samurais.FirstOrDefault(s => s.Id == 19);
             if (samurai != null)
             {
                 _context.Samurais.Remove(samurai);
@@ -106,6 +106,45 @@ namespace SamuraiApp.UI
                 context2.SaveChanges();
             }
         }
-    }
+        private static void InsertNewSamuraiWithAQuote()
+        {
+            var samurai = new Samurai
+            {
+                Name = "Kambei Shimada",
+                Quotes = new List<Quote>
+                {
+                    new Quote { Text = "I've come to save you" }
+                }
+            };
+            _context.Samurais.Add(samurai);
+            _context.SaveChanges();
+        }
+        private static void EagerLoadSamuraiWithQuotes()
+        {
+            var samuraiWithQuotes = _context.Samurais.Include(s => s.Quotes).ToList();
+        }
+        private static void ProjectSomeProperties()
+        {
+            var someProperties = _context.Samurais.Select(s => new { s.Id, s.Name }).ToList();
+        }
+        private static void ProjectSamuraisWithQuotes()
+        {
+            var somePropsWithQuotes = _context.Samurais
+                .Select(s => new IdNameQuotes(s.Id, s.Name, s.Quotes.Count))
+                .ToList();
+        }
+        public struct IdNameQuotes
+        {
+            public IdNameQuotes(int id, string name, int numberOfQuotes)
+            {
+                Id = id;
+                Name = name;
+                NumberOfQuotes = numberOfQuotes;
+            }
+            public int Id;
+            public string Name;
+            public int NumberOfQuotes;
+        }
 
+    }
 }
