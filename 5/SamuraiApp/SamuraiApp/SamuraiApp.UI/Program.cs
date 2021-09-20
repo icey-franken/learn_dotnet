@@ -14,9 +14,7 @@ namespace SamuraiApp.UI
 
         private static void Main(string[] args)
         {
-            Console.WriteLine("Press any key...");
-            Console.ReadKey();
-            ProjectSamuraisWithQuotes();
+            ExplicitLoadQuotes();
         }
 
         private static void AddSamuraisByName(params string[] names)
@@ -119,19 +117,87 @@ namespace SamuraiApp.UI
             _context.Samurais.Add(samurai);
             _context.SaveChanges();
         }
+        private static void InsertNewSamuraiWithManyQuotes()
+        {
+            var samurai = new Samurai
+            {
+                Name = "Kyuzo",
+                Quotes = new List<Quote>
+                {
+                    new Quote { Text = "Watch out for my sharp sword!" },
+                    new Quote { Text = "I told you to watch out for the sharp sword! Oh well!"}
+                }
+            };
+            _context.Samurais.Add(samurai);
+            _context.SaveChanges();
+        }
+        private static void AddQuoteToExistingSamuraiWhileTracked()
+        {
+            var samurai = _context.Samurais.Skip(1).FirstOrDefault();
+            samurai.Quotes.Add(new Quote
+            {
+                Text = "I bet you're happy that I've saved you!"
+            });
+            _context.SaveChanges();
+        }
+        private static void AddQuoteToExistingSamuraiNotTracked(int samuraiId)
+        {
+            var samurai = _context.Samurais.Find(samuraiId);
+            samurai.Quotes.Add(new Quote
+            {
+                Text = "Now that I saved you, will you feed me dinner?"
+            });
+            using (var newContext = new SamuraiContext())
+            {
+                newContext.Samurais.Attach(samurai);
+                newContext.SaveChanges();
+            };
+        }
+        private static void Simpler_AddQuoteToExistingSamuraiNotTracked(int samuraiId)
+        {
+            var quote = new Quote { Text = "Thanks for dinner!", SamuraiId = samuraiId };
+            using var newContext = new SamuraiContext();
+            newContext.Quotes.Add(quote);
+            newContext.SaveChanges();
+        }
         private static void EagerLoadSamuraiWithQuotes()
         {
-            var samuraiWithQuotes = _context.Samurais.Include(s => s.Quotes).ToList();
+            //var samuraiWithQuotes = _context.Samurais.Include(s => s.Quotes).ToList();
+            //var splitQuery = _context.Samurais.AsSplitQuery().Include(s => s.Quotes).ToList();
+            var filteredInclude = _context.Samurais
+                .Include(s => s.Quotes.Where(q => q.Text.Contains("hanks")))
+                .Where(s => s.Name.Contains("Julie"))
+                .Where(s => s.Quotes.Count > 0).ToList();
+            var filterPrimaryEntityWithInclude =
+                _context.Samurais.Where(s => s.Name.Contains("Sampson"))
+                .Include(s => s.Quotes).FirstOrDefault();
         }
         private static void ProjectSomeProperties()
         {
-            var someProperties = _context.Samurais.Select(s => new { s.Id, s.Name }).ToList();
+            var someProperties = _context.Samurais.Select(s => new IdName(s.Id, s.Name)).ToList();
+        }
+        public struct IdName
+        {
+            public IdName(int id, string name)
+            {
+                Id = id;
+                Name= name;
+            }
+            public int Id;
+            public string Name;
         }
         private static void ProjectSamuraisWithQuotes()
         {
             var somePropsWithQuotes = _context.Samurais
                 .Select(s => new IdNameQuotes(s.Id, s.Name, s.Quotes.Count))
                 .ToList();
+            var samuraisAndQuotes = _context.Samurais
+                .Select(s => new { 
+                    Samurai = s, 
+                    HappyQuotes = s.Quotes.Where(q => q.Text.Contains("happy")) 
+                }).ToList();
+            var firstSamurai = samuraisAndQuotes[0].Samurai.Name += " The Happiest";
+            _context.SaveChanges();
         }
         public struct IdNameQuotes
         {
@@ -145,6 +211,11 @@ namespace SamuraiApp.UI
             public string Name;
             public int NumberOfQuotes;
         }
-
+        private static void ExplicitLoadQuotes()
+        {
+            var samurai = _context.Samurais.Find(1);
+            _context.Entry(samurai).Collection(s => s.Quotes).Load();
+            _context.Entry(samurai).Reference(s => s.Horse).Load();
+        }
     }
 }
