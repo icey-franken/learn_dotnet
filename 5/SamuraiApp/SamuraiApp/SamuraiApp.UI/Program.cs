@@ -14,7 +14,7 @@ namespace SamuraiApp.UI
 
         private static void Main(string[] args)
         {
-            ExplicitLoadQuotes();
+            ModifyingRelatedDataWhenNotTracked();
         }
 
         private static void AddSamuraisByName(params string[] names)
@@ -216,6 +216,32 @@ namespace SamuraiApp.UI
             var samurai = _context.Samurais.Find(1);
             _context.Entry(samurai).Collection(s => s.Quotes).Load();
             _context.Entry(samurai).Reference(s => s.Horse).Load();
+        }
+        private static void FilteringWithRelatedData()
+        {
+            var samurais = _context.Samurais
+                .Where(s => s.Quotes.Any(q => q.Text.Contains("happy")))
+                //.Include(s => s.Quotes)
+                .ToList();
+        }
+        private static void ModifyingRelatedDataWhenTracked()
+        {
+            var samurai = _context.Samurais.Include(s => s.Quotes)
+                .FirstOrDefault(s => s.Id == 1);
+            samurai.Quotes[0].Text = "Did you hear that?";
+            _context.SaveChanges();
+        }
+        private static void ModifyingRelatedDataWhenNotTracked()
+        {
+            var samurai = _context.Samurais.Include(s => s.Quotes)
+                .FirstOrDefault(s => s.Id == 2);
+            var quote = samurai.Quotes[0];
+            quote.Text += "Did you hear that again?";
+
+            using var newContext = new SamuraiContext();
+            //newContext.Quotes.Update(quote);
+            newContext.Entry(quote).State = EntityState.Modified;
+            newContext.SaveChanges();
         }
     }
 }
