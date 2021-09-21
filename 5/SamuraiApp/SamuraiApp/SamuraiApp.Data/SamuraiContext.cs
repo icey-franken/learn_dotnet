@@ -39,6 +39,7 @@ namespace SamuraiApp.Data
                 )
                 .Property(bs => bs.DateJoined)
                 .HasDefaultValueSql("getdate()");
+
         }
     }
 }
