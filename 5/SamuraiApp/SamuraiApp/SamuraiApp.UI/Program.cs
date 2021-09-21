@@ -14,9 +14,16 @@ namespace SamuraiApp.UI
 
         private static void Main(string[] args)
         {
-            GetHorsesWithSamurai();
+            QuerySamuraiBattleStats();
         }
 
+        private static void QuerySamuraiBattleStats()
+        {
+            var stats = _context.SamuraiBattleStats.ToList();
+        }
+        
+
+//////////////////////////////////////////////////////////////////
         private static void AddSamuraisByName(params string[] names)
         {
             foreach (string name in names)
