@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SamuraiApp.Domain", "SamuraiApp.Domain\SamuraiApp.Domain.csproj", "{A19C2B32-BC7C-461B-8335-5A183CE50AE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SamuraiApp.Domain", "SamuraiApp.Domain\SamuraiApp.Domain.csproj", "{A19C2B32-BC7C-461B-8335-5A183CE50AE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SamuraiApp.Data", "SamuraiApp.Data\SamuraiApp.Data.csproj", "{ED8437C4-3526-466C-A314-F273B30B70A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SamuraiApp.Data", "SamuraiApp.Data\SamuraiApp.Data.csproj", "{ED8437C4-3526-466C-A314-F273B30B70A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SamuraiApp.UI", "SamuraiApp.UI\SamuraiApp.UI.csproj", "{75E89469-C8F9-4717-8775-8527C6747234}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SamuraiAPI", "SamuraiAPI\SamuraiAPI.csproj", "{248B5137-2CED-4FAD-9DE2-FF37474DEED6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{ED8437C4-3526-466C-A314-F273B30B70A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED8437C4-3526-466C-A314-F273B30B70A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED8437C4-3526-466C-A314-F273B30B70A5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{75E89469-C8F9-4717-8775-8527C6747234}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{75E89469-C8F9-4717-8775-8527C6747234}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{75E89469-C8F9-4717-8775-8527C6747234}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{75E89469-C8F9-4717-8775-8527C6747234}.Release|Any CPU.Build.0 = Release|Any CPU
+		{248B5137-2CED-4FAD-9DE2-FF37474DEED6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{248B5137-2CED-4FAD-9DE2-FF37474DEED6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{248B5137-2CED-4FAD-9DE2-FF37474DEED6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{248B5137-2CED-4FAD-9DE2-FF37474DEED6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
