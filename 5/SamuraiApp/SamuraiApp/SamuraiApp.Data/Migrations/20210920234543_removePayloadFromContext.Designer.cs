@@ -3,21 +3,38 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SamuraiApp.Data;
 
 namespace SamuraiApp.Data.Migrations
 {
     [DbContext(typeof(SamuraiContext))]
-    partial class SamuraiContextModelSnapshot : ModelSnapshot
+    [Migration("20210920234543_removePayloadFromContext")]
+    partial class removePayloadFromContext
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.10")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("BattleSamurai", b =>
+                {
+                    b.Property<int>("BattlesId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SamuraisId")
+                        .HasColumnType("int");
+
+                    b.HasKey("BattlesId", "SamuraisId");
+
+                    b.HasIndex("SamuraisId");
+
+                    b.ToTable("BattleSamurai");
+                });
 
             modelBuilder.Entity("SamuraiApp.Domain.Battle", b =>
                 {
@@ -42,22 +59,23 @@ namespace SamuraiApp.Data.Migrations
 
             modelBuilder.Entity("SamuraiApp.Domain.BattleSamurai", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
                     b.Property<int>("BattleId")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("DateJoined")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("SamuraiId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DateJoined")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValueSql("getdate()");
+                    b.HasKey("Id");
 
-                    b.HasKey("BattleId", "SamuraiId");
-
-                    b.HasIndex("SamuraiId");
-
-                    b.ToTable("BattleSamurai");
+                    b.ToTable("BattleSamurais");
                 });
 
             modelBuilder.Entity("SamuraiApp.Domain.Horse", b =>
@@ -116,17 +134,17 @@ namespace SamuraiApp.Data.Migrations
                     b.ToTable("Samurais");
                 });
 
-            modelBuilder.Entity("SamuraiApp.Domain.BattleSamurai", b =>
+            modelBuilder.Entity("BattleSamurai", b =>
                 {
                     b.HasOne("SamuraiApp.Domain.Battle", null)
                         .WithMany()
-                        .HasForeignKey("BattleId")
+                        .HasForeignKey("BattlesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("SamuraiApp.Domain.Samurai", null)
                         .WithMany()
-                        .HasForeignKey("SamuraiId")
+                        .HasForeignKey("SamuraisId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
