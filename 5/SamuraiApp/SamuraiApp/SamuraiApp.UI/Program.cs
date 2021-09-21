@@ -1,36 +1,21 @@
 ﻿using System;
 using SamuraiApp.Data;
-using SamuraiApp.Domain;
-using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Collections.Generic;
 
 namespace SamuraiApp.UI
 {
-    class Program
+    internal class Program
     {
-        private static SamuraiContext _context = new SamuraiContext();
-        //private static SamuraiContextNoTracking _context = new SamuraiContextNoTracking();
-
         private static void Main(string[] args)
         {
-            QuerySamuraiBattleStats();
+            AddSamuraisByName("");
         }
 
-        private static void QuerySamuraiBattleStats()
-        {
-            var stats = _context.SamuraiBattleStats.ToList();
-        }
-        
-
-//////////////////////////////////////////////////////////////////
         private static void AddSamuraisByName(params string[] names)
         {
-            foreach (string name in names)
-            {
-                _context.Samurais.Add(new Samurai { Name = name });
-            }
-            _context.SaveChanges();
+            var _bizData = new BusinessDataLogic();
+            var newSamuraisCreatedCount = _bizData.AddSamuraisByName(names);
         }
         private static void AddBattlesByName(params string[] names)
         {
