@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\5",
+    "\\5\\SamuraiApp",
+    "\\5\\SamuraiApp\\SamuraiApp",
+    "\\5\\SamuraiApp\\SamuraiApp\\SamuraiApp.UI"
   ],
-  "SelectedNode": "\\SamuraiApp.sln",
+  "SelectedNode": "\\5\\SamuraiApp\\SamuraiApp\\SamuraiApp.sln",
   "PreviewInSolutionExplorer": false
 }
