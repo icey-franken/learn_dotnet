@@ -17,6 +17,7 @@ namespace SamuraiApp.Data
         public DbSet<Samurai> Samurais { get; set; }
         public DbSet<Quote> Quotes { get; set; }
         public DbSet<Battle> Battles { get; set; }
+        public DbSet<SamuraiBattle> SamuraiBattles { get; set; }
         //public DbSet<Horse> Horses { get; set; }
         //public DbSet<SamuraiBattleStat> SamuraiBattleStats { get; set; }
 
@@ -57,6 +58,10 @@ namespace SamuraiApp.Data
         {
             modelBuilder.Entity<SamuraiBattle>()
                 .HasKey(s => new { s.SamuraiId, s.BattleId });
+
+            //why is this needed? We specified in the Entity class that these properties of DateTime exist.
+            modelBuilder.Entity<Battle>().Property(b => b.StartDate).HasColumnType("Date");
+            modelBuilder.Entity<Battle>().Property(b => b.EndDate).HasColumnType("Date");
             //modelBuilder.Entity<Samurai>()
             //    .HasMany(s => s.Battles)
             //    .WithMany(b => b.Samurais)
