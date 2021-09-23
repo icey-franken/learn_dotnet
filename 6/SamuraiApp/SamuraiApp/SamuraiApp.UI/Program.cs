@@ -18,8 +18,31 @@ namespace SamuraiApp.UI
             //EnlistSamuraiIntoABattleUntracked();
             //AddNewSamuraiViaDisconnectedBattleObject();
             //GetSamuraiWithBattles();
-            RemoveJoinBetweenSamuraiAndBattle(3, 1);
+            //RemoveJoinBetweenSamuraiAndBattle(3, 1);
+            //AddSamuraiWithSecretIdentity();
+            AddSecretIdentityToExistingSamurai();
         }
+        private static void AddSecretIdentityToExistingSamurai()
+        {
+            var samurai = _context.Samurais.Find(2);
+            samurai.SecretIdentity = new SecretIdentity { RealName = "Julia" };
+            _context.Attach(samurai);
+            _context.SaveChanges();
+        }
+        private static void AddSecretIdentityUsingSamuraiId()
+        {
+            var secretIdentity = new SecretIdentity { RealName = "Isaac", SamuraiId = 1 };
+            _context.Add(secretIdentity);
+            _context.SaveChanges();
+        }
+        private static void AddSamuraiWithSecretIdentity()
+        {
+            var samurai = new Samurai { Name = "Jina Ujichika" };
+            samurai.SecretIdentity = new SecretIdentity { RealName = "Julie" };
+            _context.Samurais.Add(samurai);
+            _context.SaveChanges();
+        }
+
         private static void RemoveJoinBetweenSamuraiAndBattle(int samuraiId, int battleId)
         {
             var samurai = _context.Samurais.Include(s => s.SamuraiBattles).SingleOrDefault(s => s.Id == samuraiId);
