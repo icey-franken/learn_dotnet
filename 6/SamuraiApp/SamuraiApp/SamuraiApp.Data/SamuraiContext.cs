@@ -76,6 +76,10 @@ namespace SamuraiApp.Data
             //modelBuilder.Entity<SamuraiBattleStat>()
             //    .HasNoKey()
             //    .ToView("SamuraiBattleStats");
+
+            //modelBuilder.Entity<Samurai>()
+            //    .HasOne(s => s.SecretIdentity)
+            //    .WithOne(si => si.Samurai).HasForeignKey<SecretIdentity>("SamuraiId");
         }
     }
 }
