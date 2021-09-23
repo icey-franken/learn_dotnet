@@ -20,8 +20,9 @@ namespace SamuraiApp.UI
             //GetSamuraiWithBattles();
             //RemoveJoinBetweenSamuraiAndBattle(3, 1);
             //AddSamuraiWithSecretIdentity();
-            AddSecretIdentityToExistingSamurai();
+            //AddSecretIdentityToExistingSamurai();
         }
+
         private static void AddSecretIdentityToExistingSamurai()
         {
             var samurai = _context.Samurais.Find(2);
