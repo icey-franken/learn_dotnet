@@ -63,6 +63,7 @@ namespace SamuraiApp.Data
             //why is this needed? We specified in the Entity class that these properties of DateTime exist.
             modelBuilder.Entity<Battle>().Property(b => b.StartDate).HasColumnType("Date");
             modelBuilder.Entity<Battle>().Property(b => b.EndDate).HasColumnType("Date");
+            
             //modelBuilder.Entity<Samurai>()
             //    .HasMany(s => s.Battles)
             //    .WithMany(b => b.Samurais)
