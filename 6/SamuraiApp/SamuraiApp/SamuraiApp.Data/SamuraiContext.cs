@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using SamuraiApp.Domain;
 using System;
+using System.Linq;
 
 namespace SamuraiApp.Data
 {
@@ -36,21 +37,21 @@ namespace SamuraiApp.Data
             //Otherwise, if we're just testing, this db provider will be used instead.
             //if (!optionsBuilder.IsConfigured)
             //{
-                optionsBuilder
-                    //.UseLoggerFactory(MyConsoleLoggerFactory)
-                    //.UseSqlServer("Data Source= (localdb)\\MSSQLLocalDB; Initial Catalog=SamuraiTestData");
-                    .UseSqlServer("Server = (localdb)\\MSSQLLocalDB; Database = SamuraiAppData; Trusted_Connection = True");
-                    //.EnableSensitiveDataLogging(true);
+            optionsBuilder
+                //.UseLoggerFactory(MyConsoleLoggerFactory)
+                //.UseSqlServer("Data Source= (localdb)\\MSSQLLocalDB; Initial Catalog=SamuraiTestData");
+                .UseSqlServer("Server = (localdb)\\MSSQLLocalDB; Database = SamuraiAppData; Trusted_Connection = True");
+            //.EnableSensitiveDataLogging(true);
 
-                optionsBuilder.LogTo(
-                    Console.WriteLine,
-                    new[] {
+            optionsBuilder.LogTo(
+                Console.WriteLine,
+                new[] {
                         DbLoggerCategory.Database.Command.Name,
-                        //DbLoggerCategory.Database.Transaction.Name
-                    },
-                    LogLevel.Information
-                )
-                .EnableSensitiveDataLogging();
+                    //DbLoggerCategory.Database.Transaction.Name
+                },
+                LogLevel.Information
+            )
+            .EnableSensitiveDataLogging();
             //}
         }
 
@@ -80,6 +81,23 @@ namespace SamuraiApp.Data
             //modelBuilder.Entity<Samurai>()
             //    .HasOne(s => s.SecretIdentity)
             //    .WithOne(si => si.Samurai).HasForeignKey<SecretIdentity>("SamuraiId");
+        }
+
+        public override int SaveChanges()
+        {
+            ChangeTracker.DetectChanges();
+            var timestamp = DateTime.Now;
+            foreach (var entry in ChangeTracker.Entries()
+                .Where(e => e.State == EntityState.Added || e.State == EntityState.Modified))
+            {
+                entry.Property("LastModified").CurrentValue = timestamp;
+
+                if (entry.State == EntityState.Added)
+                {
+                    entry.Property("Created").CurrentValue = timestamp;
+                }
+            }
+            return base.SaveChanges();
         }
     }
 }
