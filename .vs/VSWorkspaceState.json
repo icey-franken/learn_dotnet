@@ -4,8 +4,14 @@
     "\\5",
     "\\5\\SamuraiApp",
     "\\5\\SamuraiApp\\SamuraiApp",
-    "\\5\\SamuraiApp\\SamuraiApp\\SamuraiApp.UI"
+    "\\5\\SamuraiApp\\SamuraiApp\\SamuraiApp.UI",
+    "\\8",
+    "\\8\\TestingWithEFCore",
+    "\\8\\TestingWithEFCore\\Starter files",
+    "\\8\\TestingWithEFCore\\Starter files\\CourseManager",
+    "\\8\\TestingWithEFCore\\Starter files\\CourseManager\\CourseManager.API",
+    "\\8\\TestingWithEFCore\\Starter files\\CourseManager\\CourseManager.API\\DbContexts"
   ],
-  "SelectedNode": "\\5\\SamuraiApp\\SamuraiApp\\SamuraiApp.sln",
+  "SelectedNode": "\\8\\TestingWithEFCore\\Starter files\\CourseManager\\CourseManager.API\\DbContexts\\CourseContext.cs",
   "PreviewInSolutionExplorer": false
 }

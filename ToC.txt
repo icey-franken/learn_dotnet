@@ -5,8 +5,8 @@
 
 [ ]EF Core Learning Path - https://app.pluralsight.com/paths/skill/entity-framework-core
 [X]5: Entity Framework Core: Getting Started - Julie Lerman - https://app.pluralsight.com/library/courses/entity-framework-core-get-started
-[ ]6: Entity Framework Core 2: Mappings - Julie Lerman - https://app.pluralsight.com/library/courses/e-f-core-2-beyond-the-basics-mappings
-[ ]7: Entity Framework Core 2.1: What's New Playbook - Julie Lerman - https://app.pluralsight.com/library/courses/playbook-ef-core-2-1-whats-new
+[X]6: Entity Framework Core 2: Mappings - Julie Lerman - https://app.pluralsight.com/library/courses/e-f-core-2-beyond-the-basics-mappings
+[X]7: Entity Framework Core 2.1: What's New Playbook - Julie Lerman - https://app.pluralsight.com/library/courses/playbook-ef-core-2-1-whats-new
 [ ]8: Testing with EF Core - Kevin Dockx - https://app.pluralsight.com/library/courses/ef-core-testing
 [ ]9: Entity Framework Core 2.1 Migrations: Fundamentals - Michael Perry - https://app.pluralsight.com/library/courses/entity-framework-core-2-1-migrations-fundamentals
 
